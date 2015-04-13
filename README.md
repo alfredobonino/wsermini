@@ -12,9 +12,11 @@ sudo cp wsermini /usr/bin
 1. Why create a new browser based on webkit?
 
 R. wsermini is a mini browser forr old pc, but with gui.
+
 2. Flash, Java and other plugin are supported?
 
 R. Yes,Java, Flash and  all plugin supported with webkitgtk.
+
 3. Why python?
 
 R. Because are very simple to change the code and for the portability of the project.
