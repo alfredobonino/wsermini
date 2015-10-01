@@ -1,22 +1,19 @@
 #!/usr/bin/env python3
 from gi.repository import WebKit
 from gi.repository import Gtk
-from argparse import ArgumentParser
-parser = ArgumentParser()
-parser.add_argument("-s", "--site", dest="site",
-help="site", metavar="SITE")
-args = parser.parse_args()
+from sys import argv
 
-view = WebKit.WebView() 
+view = WebKit.WebView()
 
-sw = Gtk.ScrolledWindow() 
-sw.add(view) 
+sw = Gtk.ScrolledWindow()
+sw.add(view)
 sw.set_size_request(500,305)
 
-win = Gtk.Window(Gtk.WindowType.TOPLEVEL) 
-win.add(sw) 
+win = Gtk.Window(Gtk.WindowType.TOPLEVEL)
+win.add(sw)
 win.show_all()
-view.open("http://google.com/") 
-if args.site:
-	view.open(args.site)
+if len(argv) > 1:
+	view.open(argv[1])
+else:
+	view.open("http://google.com/")
 Gtk.main()
